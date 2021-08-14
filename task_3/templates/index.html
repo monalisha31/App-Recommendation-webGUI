@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Task- 3 | GSoC</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="{{ url_for('static', filename='bootstrap.min.css')}}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='font-awesome.min.css')}}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='task.css')}}">
+    <link href="{{ url_for('static', filename='icon.png')}}" rel="icon">
+  </head>
+  <body>
+ 
+<div class="vertical-nav bg-white" id="sidebar">
+  <div class="py-4 px-3 mb-4 bg-light">
+    <div class="media d-flex align-items-center">
+          <div class="media-body">
+        <h4 class="m-0">Task - 3</h4>
+        <p class="font-weight-light text-muted mb-0">Ganga</p>
+      </div>
+    </div>
+  </div>
+  <p class="text-gray font-weight-bold text-uppercase px-3 small pb-4 mb-0">Main</p>
+  <ul class="nav flex-column bg-white mb-0">
+    <li class="nav-item">
+       <small class="text-uppercase font-weight-bold"><a href="#app" class="nav-link text-dark bg-light">App Recommendation</small></a>
+    </li>
+  </ul>
+</div>
+<div class="page-content p-5" id="content">
+  <button id="sidebarCollapse" type="button" class="btn btn-light bg-white rounded-pill shadow-sm px-4 mb-4"><small class="text-uppercase font-weight-bold">Toggle</small></button>
+  <h2 class="display-4 text-white"></h2>
+  <p class="lead text-white mb-0">Ganga GUI task</p> 
+  <div class="separator"></div>
+  <div class="row text-white">
+    <div class="col-lg-12">
+    <strong>  <p class="lead">In this part of the task, I developed a Playstore app recommendation system using Cosine Similarity and Flask</p></strong>
+  </div>
+    <section id="app">
+      <div class="bg-white p-5 rounded my-5 shadow-sm">
+        <p class="lead" style="color: black;">App Recommendation system</p>
+        <p class="lead font-italic mb-0 text-muted">This is a Content Based Recommendation system to find similar apps. 
+          Enter the app that you like the most. Then, you will see 10 apps similar to ones that you have entered.
+          Try "Google Play Books" to test it. </p>
+
+        <form action="{{ url_for('main') }}" method="POST">
+          <div class="form-group">
+          <label>Enter your favourite app</label>
+          <input type="text" class="form-control" id="app_name" name="app_name"  placeholder="Enter your favourite app" required />
+          </div>
+          <div class="form-group">
+          <input type="submit" id="submission_button" class="btn btn-primary" value="Submit"/>
+          </div>
+        </form>
+      </div>
+    </section>
+  </div>
+</div>
+<script src="{{ url_for('static', filename='bootstrap.bundle.min.js')}}"></script>
+<script src="{{ url_for('static', filename='jquery-3.3.1.slim.min.js')}}"></script>
+<script src="{{ url_for('static', filename='task.js')}}"></script>
+</body>
+</html>
